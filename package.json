@@ -1,0 +1,16 @@
+{
+  "name": "maybe",
+  "version": "0.0.0",
+  "description": "wraps a function in null/undefined guards. checks that all arguments have some value. shouldn't be used ifnull or undefined is acceptable for any arguments.",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap test/*.js"
+  },
+  "keywords": [
+    "mayby",
+    "functional",
+    "guard"
+  ],
+  "author": "wilhelmson",
+  "license": "MIT"
+}
