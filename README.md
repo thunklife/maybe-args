@@ -23,6 +23,7 @@ var maybe = require('maybe-args'),
 
 add(1, null) //=> ReferenceError
 add(1,2) //=> 3
+```
 
 license
 =======
