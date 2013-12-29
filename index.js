@@ -3,11 +3,13 @@ var slice = Array.prototype.slice;
 module.exports = function maybe (fn){
 	return function(){
 		var args = slice.call(arguments),
-			valid = args.reduce(function(curr, prev){
-				return curr && (prev != null);
-			},true);
+			result;
+		
+		args.forEach(function(arg){
+			if(arg == null) throw new ReferenceError('argument cannot be null');
+		});
 
-		if(!valid) throw "Invalid arguments";
-		return fn.apply(null, args);
+		result = fn.apply(null, args);
+		return typeof result === 'function' ? maybe(result) : result;
 	}
 }

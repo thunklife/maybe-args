@@ -1,5 +1,5 @@
 {
-  "name": "maybe",
+  "name": "maybe-args",
   "version": "0.0.0",
   "description": "wraps a function in null/undefined guards. checks that all arguments have some value. shouldn't be used ifnull or undefined is acceptable for any arguments.",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "test": "tap test/*.js"
   },
   "keywords": [
-    "mayby",
+    "maybe",
     "functional",
     "guard"
   ],
@@ -15,5 +15,10 @@
   "license": "MIT",
   "devDependencies": {
     "tap": "~0.4.6"
-  }
+  },
+  "repository":{
+    "type": "git",
+    "url": "https://github.com/wilhelmson/maybe-args.git"
+  },
+  "readmeFilename": "README.md"
 }
