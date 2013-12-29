@@ -17,7 +17,7 @@ usage
 
 ```
 var maybe = require('maybe-args'),
-	add =(function(a,b){
+	add =maybe(function(a,b){
 		return a + b;
 	});
 
