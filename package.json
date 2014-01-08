@@ -14,9 +14,9 @@
   "author": "wilhelmson",
   "license": "MIT",
   "devDependencies": {
-    "tap": "~0.4.6"
+    "tap": "~0.4.7"
   },
-  "repository":{
+  "repository": {
     "type": "git",
     "url": "https://github.com/wilhelmson/maybe-args.git"
   },

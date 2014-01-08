@@ -1,12 +1,13 @@
 var test = require('tap').test,
 	maybe = require('../'),
-	curry = require('../../curry'),
-	add = curry(function(a,b){
+	add = function(a,b){
 		return a + b
-	}),
+	},
 	mayAdd = maybe(add);
 
 test('throws ReferenceError if argument is null', function(t){
+	var result = mayAdd(null,1);
 	t.plan(1);
-	t.throws(function(){ mayAdd(null, 1)}, {name: 'ReferenceError', message: 'argument cannot be null'})
+
+	t.equals(void 0, result);
 });

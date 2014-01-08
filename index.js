@@ -5,10 +5,10 @@ module.exports = function maybe (fn){
 		var args = slice.call(arguments),
 			result;
 		
-		args.forEach(function(arg){
-			if(arg == null) throw new ReferenceError('argument cannot be null');
-		});
-
+		valid = args.reduce(function(curr, prev){
+			return curr && prev != null;
+		}, true)
+		if(!valid) return void 0;
 		result = fn.apply(null, args);
 		return typeof result === 'function' ? maybe(result) : result;
 	}
