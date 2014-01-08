@@ -3,6 +3,7 @@ var slice = Array.prototype.slice;
 module.exports = function maybe (fn){
 	return function(){
 		var args = slice.call(arguments),
+			valid,
 			result;
 		
 		valid = args.reduce(function(curr, prev){
