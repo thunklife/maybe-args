@@ -5,7 +5,7 @@ var test = require('tap').test,
     },
     mayAdd = maybe(add);
 
-test('throws ReferenceError if argument is null', function(t){
+test('returns undefined when invalid args are passed', function(t){
     var result = mayAdd(null,1);
     t.plan(1);
 
