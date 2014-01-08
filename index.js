@@ -8,9 +8,12 @@ module.exports = function maybe (fn){
 		
 		valid = args.reduce(function(curr, prev){
 			return curr && prev != null;
-		}, true)
+		}, true);
+
 		if(!valid) return void 0;
+		
 		result = fn.apply(null, args);
+		
 		return typeof result === 'function' ? maybe(result) : result;
 	}
 }
