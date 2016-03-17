@@ -3,14 +3,14 @@ var slice = Array.prototype.slice;
 module.exports = function maybe (fn){
     return function(){
         var args = slice.call(arguments),
-            valid,
+            invalid,
             result;
         
-        valid = args.reduce(function(curr, prev){
-            return curr && prev != null;
-        }, true);
+        invalid = args.some(function(arg){
+            return arg == null;
+        });
 
-        if(!valid) return void 0;
+        if(invalid) return void 0;
         
         result = fn.apply(this, args);
         
