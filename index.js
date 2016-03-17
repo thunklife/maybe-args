@@ -12,7 +12,7 @@ module.exports = function maybe (fn){
 
         if(!valid) return void 0;
         
-        result = fn.apply(null, args);
+        result = fn.apply(this, args);
         
         return typeof result === 'function' ? maybe(result) : result;
     }
